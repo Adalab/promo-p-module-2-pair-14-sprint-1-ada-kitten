@@ -3,10 +3,12 @@
 // Modificar clase CSS 
 
 const newForm = document.querySelector('.js-new-form');
-newForm.classList.remove('collapsed');
-const searchDesc = document.querySelector('.js_in_search_desc');
-const descSearchText = searchDesc.value;
-searchDesc.value = 'cariñoso';
+// newForm.classList.remove('collapsed');
+if (newForm.classList.contains('collapsed')) {
+  newForm.classList.remove("collapsed");
+} else {
+  newForm.classList.add("collapsed");
+}
 
 
 // Variables e interpolaciones (aplicadas en la parte inferior)
@@ -27,7 +29,7 @@ const kittenTwoRace = "British Shorthair";
 const kittenThreeImage = "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg";
 const kittenThreeName = "Cielo";
 const capitalizedThree = kittenThreeName.toUpperCase();
-const kittenThreeDesc = "Ruiseño, juguetón, le guta  estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!";
+const kittenThreeDesc = "Carácter tranquilo, equilibrado, sociable y, sobre todo, cariñoso y apegado a los seres humanos. Son inteligentes y les encanta estar acompañados.";
 const kittenThreeRace = "British Shorthair";
 
 // Guardar <li> en variables (añadidas interpolaciones)
@@ -35,6 +37,10 @@ const kittenThreeRace = "British Shorthair";
 /* ¿Añadir estilos para poner en línea la lista? */
 
 const catList = document.querySelector(".js-list");
+
+const searchDesc = document.querySelector('.js_in_search_desc');
+searchDesc.value = 'cariñoso';
+const descSearchText = searchDesc.value;
 
 const kittenOne = `<li class="card">
 <article>
@@ -48,6 +54,7 @@ const kittenOne = `<li class="card">
   <p class="card_description">${kittenOneDesc}</p>
 </article>
 </li>`;
+
 if( kittenOneDesc.includes(descSearchText) ) {
   catList.innerHTML += `${kittenOne}`;
  }
@@ -62,6 +69,7 @@ const kittenTwo = `<li class="card">
 <h4 class="card_race">${kittenTwoRace}</h4>
 <p class="card_description">${kittenTwoDesc}</p>
 </li>`;
+
 if( kittenTwoDesc.includes(descSearchText) ) {
   catList.innerHTML += `${kittenTwo}`;
  }
@@ -76,8 +84,7 @@ const kittenThree = `<li class="card">
 <h4 class="card_race">${kittenThreeRace}</h4>
 <p class="card_description">${kittenThreeDesc}</p>
 </li>`;
+
 if( kittenThreeDesc.includes(descSearchText) ) {
   catList.innerHTML += `${kittenThree}`;
  }
-
-catList.innerHTML = kittenOne + kittenTwo + kittenThree; 
