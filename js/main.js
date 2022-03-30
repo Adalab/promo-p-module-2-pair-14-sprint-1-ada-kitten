@@ -5,16 +5,16 @@
 const newForm = document.querySelector('.js-new-form');
 // newForm.classList.remove('collapsed');
 
-const jsPlus = document.querySelector('.js-plus');
+const jsPlus = document.querySelector('.item');
 const jsBtn = document.querySelector('.js-btn-add');
-const jsPhoto = document.querySelector('js-photo');
-const jsName = document.querySelector('js-name');
-const jsDesc = document.querySelector('js-desc');
-const jsError = document.querySelector('js-error');
+const jsPhoto = document.querySelector('.js-photo');
+const jsName = document.querySelector('.js-name');
+const jsDesc = document.querySelector('.js-desc');
+const jsError = document.querySelector('.js-error');
 
 
 jsPlus.addEventListener('click',(event) =>{
-  const plux = event.preventDefault();
+  event.preventDefault();
   newForm.classList.toggle("collapsed");
 });
 
@@ -32,9 +32,7 @@ jsBtn.addEventListener('click',(event) =>{
     const error = jsError.innerHTML('debe rellenar todos los valores');
   }
 });*/
-
-
-// Variables e interpolaciones (aplicadas en la parte inferior)
+// Variables e interpolaciones (aplicadas en la part e inferior)
 
 const kittenOneImage = "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg";
 const kittenOneName = "Anastacio";
@@ -110,4 +108,4 @@ const kittenThree = `<li class="card">
 
 if( kittenThreeDesc.includes(descSearchText) ) {
   catList.innerHTML += `${kittenThree}`;
- }
+ };
