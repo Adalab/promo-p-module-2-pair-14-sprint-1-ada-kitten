@@ -4,11 +4,34 @@
 
 const newForm = document.querySelector('.js-new-form');
 // newForm.classList.remove('collapsed');
-if (newForm.classList.contains('collapsed')) {
-  newForm.classList.remove("collapsed");
-} else {
-  newForm.classList.add("collapsed");
-}
+
+const jsPlus = document.querySelector('.js-plus');
+const jsBtn = document.querySelector('.js-btn-add');
+const jsPhoto = document.querySelector('js-photo');
+const jsName = document.querySelector('js-name');
+const jsDesc = document.querySelector('js-desc');
+const jsError = document.querySelector('js-error');
+
+
+jsPlus.addEventListener('click',(event) =>{
+  const plux = event.preventDefault();
+  newForm.classList.toggle("collapsed");
+});
+
+jsBtn.addEventListener('click',(event) =>{
+  event.preventDefault();
+  const valuePhoto = jsPhoto.value;
+  const valueName = jsName.value;
+  const valueDesc = jsDesc.value;
+ /* if(
+  valuePhoto === '' || valueName === '' || valueDesc === ''
+  ) {
+  
+  }
+  else {
+    const error = jsError.innerHTML('debe rellenar todos los valores');
+  }
+});*/
 
 
 // Variables e interpolaciones (aplicadas en la parte inferior)
